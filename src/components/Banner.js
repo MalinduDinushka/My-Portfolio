@@ -61,14 +61,14 @@ export const Banner = () => {
                 <h1>{`Hello I'm`}<br/><span className="name-highlight"><span className="wrap">{text}</span></span></h1>
                   <p>Third-year IT undergraduate at the University of Moratuwa, passionate about software development and problem-solving. Seeking a Software Engineering internship to apply my skills and gain real industry experience.</p>
                   <div className="banner-actions">
-                    <button className="download-cv-btn" onClick={() => console.log('download cv')}>
+                    <a href="/Malindu_Dinushka_CV.pdf" download="Malindu_Dinushka_CV.pdf" className="download-cv-btn">
                       <span>DOWNLOAD CV</span>
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 15L8 11H16L12 15Z" fill="currentColor"/>
                         <path d="M12 3V13" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                         <path d="M5 19H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                       </svg>
-                    </button>
+                    </a>
                     <div className="banner-social-icon">
                       <a href="https://github.com/MalinduDinushka" aria-label="GitHub">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
