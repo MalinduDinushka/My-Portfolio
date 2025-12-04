@@ -53,7 +53,7 @@ export const Banner = () => {
     <section className="banner" id="home">
       <Container>
         <Row className="align-items-center">
-          <Col xs={12} md={6} xl={6}>
+          <Col xs={12} md={6} xl={6} className="banner-text-col order-2 order-md-1">
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
@@ -114,7 +114,7 @@ export const Banner = () => {
               </div>}
             </TrackVisibility>
           </Col>
-          <Col xs={12} md={6} xl={6}>
+          <Col xs={12} md={6} xl={6} className="banner-img-col order-1 order-md-2">
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn header-img-container" : "header-img-container"}>

@@ -135,148 +135,166 @@ p.danger {
     font-size: 15px;
   }
   .banner {
-    padding: 100px 0 50px 0;
+    padding: 80px 0 35px 0;
     min-height: auto;
   }
+  .banner .container {
+    padding: 0 20px;
+  }
+  .banner-img-col {
+    margin-bottom: 25px;
+  }
+  .banner-text-col {
+    text-align: left;
+  }
   .banner .tagline {
-    font-size: 14px;
-    margin-bottom: 12px;
+    font-size: 13px;
+    margin-bottom: 8px;
   }
   .banner h1 {
-    font-size: 36px;
-    line-height: 1.2;
-    margin-bottom: 20px;
+    font-size: 30px;
+    line-height: 1.25;
+    margin-bottom: 15px;
   }
   .banner p {
-    font-size: 15px;
-    line-height: 1.7;
+    font-size: 13px;
+    line-height: 1.6;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   .banner-actions {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
   }
   .download-cv-btn {
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-size: 11px;
+    width: 100%;
+    justify-content: center;
   }
   .banner-social-icon {
-    gap: 8px;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
   }
   .banner-social-icon a {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
   }
   .banner-social-icon a svg {
     width: 18px;
     height: 18px;
   }
   .stats-section {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     gap: 12px;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #4A2FBD #1a1a1a;
+    -webkit-overflow-scrolling: touch;
+  }
+  .stats-section::-webkit-scrollbar {
+    height: 6px;
+  }
+  .stats-section::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 3px;
+  }
+  .stats-section::-webkit-scrollbar-thumb {
+    background: #4A2FBD;
+    border-radius: 3px;
   }
   .stat-item {
-    flex: 0 0 48%;
+    flex: 0 0 auto;
+    min-width: 140px;
     text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 18px 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
   }
   .stat-item h2 {
     font-size: 32px;
   }
   .stat-item p {
     font-size: 11px;
+    line-height: 1.4;
   }
   .header-img-container {
-    width: 300px;
-    height: 300px;
-    margin: 40px auto 0;
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
   }
   .animated-circle {
-    width: 300px;
-    height: 300px;
+    width: 240px;
+    height: 240px;
   }
   .profile-img-blend {
-    width: 290px;
-    height: 290px;
+    width: 230px;
+    height: 230px;
   }
 }
 
 @media (max-width: 480px) {
   nav.navbar a.navbar-brand {
-    font-size: 20px;
+    font-size: 19px;
   }
   .banner {
-    padding: 80px 0 40px 0;
+    padding: 80px 0 35px 0;
   }
-  .banner .tagline {
-    font-size: 13px;
+  .banner .container {
+    padding: 0 18px;
   }
-  .banner h1 {
-    font-size: 30px;
-    margin-bottom: 15px;
-  }
-  .banner p {
-    font-size: 14px;
+  .banner-img-col {
     margin-bottom: 25px;
   }
+  .banner .tagline {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  .banner h1 {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .banner p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
   .banner-actions {
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 30px;
+    gap: 12px;
+    margin-bottom: 25px;
   }
   .download-cv-btn {
-    width: 100%;
-    justify-content: center;
+    padding: 11px 18px;
+    font-size: 10px;
   }
-  .banner-social-icon {
-    width: 100%;
-    justify-content: center;
-    gap: 12px;
+  .banner-social-icon a {
+    width: 38px;
+    height: 38px;
+  }
+  .banner-social-icon a svg {
+    width: 16px;
+    height: 16px;
   }
   .stats-section {
     gap: 10px;
   }
   .stat-item {
-    flex: 0 0 48%;
+    min-width: 120px;
+    padding: 12px 10px;
   }
   .stat-item h2 {
     font-size: 28px;
   }
   .stat-item p {
     font-size: 10px;
-  }
-  .header-img-container {
-    width: 250px;
-    height: 250px;
-    margin: 30px auto 0;
-  }
-  .animated-circle {
-    width: 250px;
-    height: 250px;
-  }
-  .profile-img-blend {
-    width: 240px;
-    height: 240px;
-  }
-}
-
-@media (max-width: 375px) {
-  .banner h1 {
-    font-size: 26px;
-  }
-  .banner p {
-    font-size: 13px;
-  }
-  .stat-item h2 {
-    font-size: 24px;
-  }
-  .stat-item p {
-    font-size: 9px;
   }
   .header-img-container {
     width: 220px;
@@ -289,6 +307,54 @@ p.danger {
   .profile-img-blend {
     width: 210px;
     height: 210px;
+  }
+}
+
+@media (max-width: 375px) {
+  .banner {
+    padding: 75px 0 30px 0;
+  }
+  .banner .container {
+    padding: 0 15px;
+  }
+  .banner h1 {
+    font-size: 26px;
+  }
+  .banner p {
+    font-size: 12px;
+  }
+  .download-cv-btn {
+    padding: 10px 16px;
+    font-size: 9px;
+  }
+  .banner-social-icon a {
+    width: 36px;
+    height: 36px;
+  }
+  .stats-section {
+    gap: 8px;
+  }
+  .stat-item {
+    min-width: 110px;
+    padding: 10px 8px;
+  }
+  .stat-item h2 {
+    font-size: 26px;
+  }
+  .stat-item p {
+    font-size: 9px;
+  }
+  .header-img-container {
+    width: 200px;
+    height: 200px;
+  }
+  .animated-circle {
+    width: 200px;
+    height: 200px;
+  }
+  .profile-img-blend {
+    width: 190px;
+    height: 190px;
   }
 }
 /************ Navbar Css ************/
