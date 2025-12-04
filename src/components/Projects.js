@@ -97,41 +97,43 @@ export const Projects = () => {
           <Col xs={12} md={6}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn project-content" : "project-content"}>
-                  <div className="project-number">{project.number}</div>
-                  <h2>{project.title}</h2>
-                  {project.role && <div className="project-role">{project.role}</div>}
-                  {project.subtitle && <div className="project-subtitle">{project.subtitle}</div>}
-                  <p>{project.description}</p>
-                  <div className="project-tech">
-                    {project.tech.map((tech, index) => (
-                      <span key={index} className="tech-tag">{tech}</span>
-                    ))}
-                  </div>
-                  <div className="project-links">
-                    {project.live !== "#" && (
-                      <a href={project.live} className="project-link" aria-label="View Live Project">
-                        <BoxArrowUpRight size={20} />
-                      </a>
-                    )}
-                    {project.github !== "#" && (
-                      <a href={project.github} className="project-link" aria-label="View Frontend on GitHub">
-                        <Github size={20} /> <span>Frontend</span>
-                      </a>
-                    )}
-                    {project.githubBackend && (
-                      <a href={project.githubBackend} className="project-link" aria-label="View Backend on GitHub">
-                        <Github size={20} /> <span>Backend</span>
-                      </a>
-                    )}
-                  </div>
-                  <div className="project-navigation">
-                    <button onClick={prevProject} className="nav-btn" aria-label="Previous Project">
-                      <ArrowLeft size={24} />
+                <div className={isVisible ? "animate__animated animate__fadeIn project-content-wrapper" : "project-content-wrapper"}>
+                  <div className="project-nav-controls">
+                    <button onClick={prevProject} className="prev-btn" aria-label="Previous Project">
+                      Previous Project
                     </button>
-                    <button onClick={nextProject} className="nav-btn nav-btn-next" aria-label="Next Project">
-                      <ArrowRight size={24} />
+                    <button onClick={nextProject} className="next-btn" aria-label="Next Project">
+                      Next Project
                     </button>
+                  </div>
+                  <div className="project-content">
+                    <div className="project-number">{project.number}</div>
+                    <h2>{project.title}</h2>
+                    {project.role && <div className="project-role">{project.role}</div>}
+                    {project.subtitle && <div className="project-subtitle">{project.subtitle}</div>}
+                    <p>{project.description}</p>
+                    <div className="project-tech">
+                      {project.tech.map((tech, index) => (
+                        <span key={index} className="tech-tag">{tech}</span>
+                      ))}
+                    </div>
+                    <div className="project-links">
+                      {project.live !== "#" && (
+                        <a href={project.live} className="project-link" aria-label="View Live Project">
+                          <BoxArrowUpRight size={20} />
+                        </a>
+                      )}
+                      {project.github !== "#" && (
+                        <a href={project.github} className="project-link" aria-label="View Frontend on GitHub">
+                          <Github size={20} /> <span>Frontend</span>
+                        </a>
+                      )}
+                      {project.githubBackend && (
+                        <a href={project.githubBackend} className="project-link" aria-label="View Backend on GitHub">
+                          <Github size={20} /> <span>Backend</span>
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               }
