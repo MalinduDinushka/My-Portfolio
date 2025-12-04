@@ -91,21 +91,22 @@ export const Projects = () => {
   const project = projects[currentProject];
 
   return (
-    <section className="project" id="projects">
+    <section className="project projects-section" id="projects">
       <Container>
+        <Row>
+          <Col xs={12}>
+            <div className="project-header skill-header">
+              <h2>Projects</h2>
+              <p>A showcase of my recent work and technical implementations</p>
+            </div>
+          </Col>
+        </Row>
+        <div className="projects-content">
         <Row className="align-items-center">
           <Col xs={12} md={6}>
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn project-content-wrapper" : "project-content-wrapper"}>
-                  <div className="project-nav-controls">
-                    <button onClick={prevProject} className="prev-btn" aria-label="Previous Project">
-                      Previous Project
-                    </button>
-                    <button onClick={nextProject} className="next-btn" aria-label="Next Project">
-                      Next Project
-                    </button>
-                  </div>
                   <div className="project-content">
                     <div className="project-number">{project.number}</div>
                     <h2>{project.title}</h2>
@@ -143,10 +144,12 @@ export const Projects = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn project-image-container" : "project-image-container"}>
-                  <div className="project-screens">
-                    <img src={project.images[currentImageIndex]} alt={project.title} className="project-img" />
+                  <div className="project-image-wrapper">
+                    <div className="project-screens">
+                      <img src={project.images[currentImageIndex]} alt={project.title} className="project-img" />
+                    </div>
                     {project.images.length > 1 && (
-                      <div className="image-navigation">
+                      <div className="project-nav">
                         <button onClick={prevImage} className="img-nav-btn" aria-label="Previous Image">
                           <ArrowLeft size={18} />
                         </button>
@@ -162,6 +165,31 @@ export const Projects = () => {
             </TrackVisibility>
           </Col>
         </Row>
+        </div>
+        
+        <div className="projects-footer-nav">
+          <button 
+            onClick={prevProject} 
+            disabled={currentProject === 0}
+            className={`nav-btn ${currentProject === 0 ? 'nav-disabled' : ''}`}
+            aria-label="Previous Project"
+          >
+            <ArrowLeft size={18} />
+            <span>Previous Project</span>
+          </button>
+          <span className="nav-indicator">
+            {currentProject + 1} / {projects.length}
+          </span>
+          <button 
+            onClick={nextProject} 
+            disabled={currentProject === projects.length - 1}
+            className={`nav-btn ${currentProject === projects.length - 1 ? 'nav-disabled' : ''}`}
+            aria-label="Next Project"
+          >
+            <span>Next Project</span>
+            <ArrowRight size={18} />
+          </button>
+        </div>
       </Container>
     </section>
   )

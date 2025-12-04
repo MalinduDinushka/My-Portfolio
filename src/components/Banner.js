@@ -52,12 +52,12 @@ export const Banner = () => {
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="align-items-center">
+        <Row className="hero-row">
           <Col xs={12} md={6} xl={6} className="banner-text-col order-2 order-md-1">
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Software Developer</span>
+                <span className="tagline" style={{ padding: "-943px 0 -20px 0", margin: "-10"}}>Software Developer</span> 
                 <h1>{`Hello I'm`}<br/><span className="name-highlight"><span className="wrap">{text}</span></span></h1>
                   <p>Third-year IT undergraduate at the University of Moratuwa, passionate about software development and problem-solving. Seeking a Software Engineering internship to apply my skills and gain real industry experience.</p>
                   <div className="banner-actions">
@@ -93,48 +93,54 @@ export const Banner = () => {
                       </a>
                     </div>
                   </div>
-                  <div className="stats-section">
-                    <div className="stat-item">
-                      <h2>2</h2>
-                      <p>Years of<br/>experience</p>
-                    </div>
-                    <div className="stat-item">
-                      <h2>8</h2>
-                      <p>Projects<br/>completed</p>
-                    </div>
-                    <div className="stat-item">
-                      <h2>8</h2>
-                      <p>Technologies<br/>mastered</p>
-                    </div>
-                    <div className="stat-item">
-                      <h2>367</h2>
-                      <p>Code<br/>commits</p>
-                    </div>
-                  </div>
               </div>}
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={6} className="banner-img-col order-1 order-md-2">
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__zoomIn header-img-container" : "header-img-container"}>
-                  <div className="animated-circle">
-                    <svg viewBox="0 0 420 420">
-                      <circle 
-                        cx="210" 
-                        cy="210" 
-                        r="208" 
-                        fill="none" 
-                        stroke="#00ff88" 
-                        strokeWidth="3" 
-                        strokeDasharray="40 20 60 15 30 25 50 18 35 22"
-                        strokeLinecap="round"
-                      />
-                    </svg>
+                <div className="hero-photo-wrapper">
+                  <div className={isVisible ? "animate__animated animate__zoomIn header-img-container" : "header-img-container"}>
+                    <div className="animated-circle">
+                      <svg viewBox="0 0 420 420">
+                        <circle 
+                          cx="210" 
+                          cy="210" 
+                          r="208" 
+                          fill="none" 
+                          stroke="#00ff88" 
+                          strokeWidth="3" 
+                          strokeDasharray="40 20 60 15 30 25 50 18 35 22"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </div>
+                    <img src={headerImg} className="profile-img-blend" alt="Profile" style={{ mixBlendMode: 'lighten' }} />
                   </div>
-                  <img src={headerImg} className="profile-img-blend" alt="Profile" style={{ mixBlendMode: 'lighten' }} />
                 </div>}
             </TrackVisibility>
+          </Col>
+        </Row>
+        <Row className="banner-stats-row">
+          <Col xs={12}>
+            <div className="banner-stats">
+              <div className="banner-stat">
+                <div className="banner-stat-number">11</div>
+                <div className="banner-stat-label">Years of experience</div>
+              </div>
+              <div className="banner-stat">
+                <div className="banner-stat-number">25</div>
+                <div className="banner-stat-label">Projects completed</div>
+              </div>
+              <div className="banner-stat">
+                <div className="banner-stat-number">8</div>
+                <div className="banner-stat-label">Technologies mastered</div>
+              </div>
+              <div className="banner-stat">
+                <div className="banner-stat-number">473</div>
+                <div className="banner-stat-label">Code commits</div>
+              </div>
+            </div>
           </Col>
         </Row>
       </Container>
