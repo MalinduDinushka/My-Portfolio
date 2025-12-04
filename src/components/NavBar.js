@@ -13,6 +13,7 @@ export const NavBar = () => {
 
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -30,28 +31,67 @@ export const NavBar = () => {
 
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
+    setExpanded(false); // Close menu on link click
+  }
+
+  const handleToggle = () => {
+    setExpanded(!expanded);
   }
 
   return (
     <Router>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
-        <Container>
+      <Navbar 
+        expand="md" 
+        expanded={expanded}
+        onToggle={handleToggle}
+        className={scrolled ? "scrolled" : ""}
+      >
+        <Container fluid className="navbar-container">
           <Navbar.Brand href="/" className="logo-text">
             MDH
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav">
+          <Navbar.Toggle 
+            aria-controls="basic-navbar-nav"
+            onClick={handleToggle}
+          >
             <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-              <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
-              <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
-              <Nav.Link href="#connect" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')}>Contact me</Nav.Link>
+            <Nav className="ms-auto navbar-nav-custom">
+              <Nav.Link 
+                href="#home" 
+                className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} 
+                onClick={() => onUpdateActiveLink('home')}
+              >
+                Home
+              </Nav.Link>
+              <Nav.Link 
+                href="#skills" 
+                className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} 
+                onClick={() => onUpdateActiveLink('skills')}
+              >
+                Skills
+              </Nav.Link>
+              <Nav.Link 
+                href="#projects" 
+                className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} 
+                onClick={() => onUpdateActiveLink('projects')}
+              >
+                Projects
+              </Nav.Link>
+              <Nav.Link 
+                href="#connect" 
+                className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} 
+                onClick={() => onUpdateActiveLink('contact')}
+              >
+                Contact
+              </Nav.Link>
             </Nav>
             <span className="navbar-text">
               <HashLink to='#connect'>
-                <button className="vvd hire-btn"><span>Hire me</span></button>
+                <button className="vvd hire-btn" onClick={() => setExpanded(false)}>
+                  <span>Hire Me</span>
+                </button>
               </HashLink>
             </span>
           </Navbar.Collapse>
