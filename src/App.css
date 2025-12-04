@@ -538,6 +538,76 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .skill-icon-item:hover .skill-icon-name {
   color: #fff;
 }
+.skill-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+.skill-tab {
+  background: #252525;
+  color: #999;
+  border: 1px solid #333;
+  border-radius: 25px;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.skill-tab:hover {
+  background: #2a2a2a;
+  border-color: #00ff88;
+  color: #00ff88;
+  transform: translateY(-2px);
+}
+.skill-tab.active {
+  background: linear-gradient(90deg, #00ff88 0%, #00dd77 100%);
+  color: #000;
+  border-color: #00ff88;
+  font-weight: 600;
+  box-shadow: 0 5px 20px rgba(0, 255, 136, 0.3);
+}
+.skill-content-section {
+  margin-top: 20px;
+}
+.skill-category-content {
+  background: #252525;
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid #333;
+  min-height: 400px;
+  transition: all 0.3s ease;
+}
+.skill-category-content h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 35px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #00ff88;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .skill-tabs {
+    gap: 10px;
+  }
+  .skill-tab {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+  .skill-category-content {
+    padding: 30px 20px;
+    min-height: 350px;
+  }
+  .skill-icons-grid {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 15px;
+  }
+}
 
 /************ Projects Css ************/
 .project {
