@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/profile.png";
-import navIcon1 from '../assets/img/nav-icon1.svg';
-import navIcon2 from '../assets/img/nav-icon2.svg';
-import navIcon3 from '../assets/img/nav-icon3.svg';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -12,7 +9,6 @@ export const Banner = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(150 - Math.random() * 50);
-  const [index, setIndex] = useState(1);
   const toRotate = [ "Malindu Dinushka" ];
   const period = 2000;
 
@@ -22,7 +18,8 @@ export const Banner = () => {
     }, delta);
 
     return () => { clearInterval(ticker) };
-  }, [text])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [text, delta])
 
   const tick = () => {
     let i = loopNum % toRotate.length;
@@ -37,15 +34,11 @@ export const Banner = () => {
 
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
-      setIndex(prevIndex => prevIndex - 1);
       setDelta(period);
     } else if (isDeleting && updatedText === '') {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-      setIndex(1);
       setDelta(500);
-    } else {
-      setIndex(prevIndex => prevIndex + 1);
     }
   }
 
