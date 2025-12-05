@@ -97,11 +97,9 @@ export const Skills = () => {
               <h3>{categories[activeCategory].title}</h3>
               <div className="skill-icons-grid">
                 {categories[activeCategory].skills.map((skill, idx) => (
-                  <div key={idx} className="skill-icon-item">
-                    <div className="skill-icon">
-                      <img src={skill.icon} alt={skill.name} />
-                    </div>
-                    <span className="skill-icon-name">{skill.name}</span>
+                  <div key={idx} className="skill-item">
+                    <img src={skill.icon} alt={skill.name} className="skill-icon" />
+                    <span className="skill-label">{skill.name}</span>
                   </div>
                 ))}
               </div>

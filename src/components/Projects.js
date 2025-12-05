@@ -93,14 +93,10 @@ export const Projects = () => {
   return (
     <section className="project projects-section" id="projects">
       <Container>
-        <Row>
-          <Col xs={12}>
-            <div className="project-header skill-header">
-              <h2>Projects</h2>
-              <p>A showcase of my recent work and technical implementations</p>
-            </div>
-          </Col>
-        </Row>
+        <div className="skill-header" >
+          <h2>Projects</h2>
+          <p>A showcase of my recent work and technical implementations</p>
+        </div>
         <div className="projects-content">
         <Row className="align-items-center">
           <Col xs={12} md={6}>
