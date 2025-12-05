@@ -61,7 +61,7 @@ export const Banner = () => {
                 <h1>{`Hello I'm`}<br/><span className="name-highlight"><span className="wrap">{text}</span></span></h1>
                   <p>Third-year IT undergraduate at the University of Moratuwa, passionate about software development and problem-solving. Seeking a Software Engineering internship to apply my skills and gain real industry experience.</p>
                   <div className="banner-actions">
-                    <a href="/Malindu_Dinushka_CV.pdf" download="Malindu_Dinushka_CV.pdf" className="download-cv-btn">
+                    <a href="/MalinduDinushka-CV.pdf" download="MalinduDinushka-CV.pdf" className="download-cv-btn">
                       <span>DOWNLOAD CV</span>
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 15L8 11H16L12 15Z" fill="currentColor"/>
@@ -125,20 +125,20 @@ export const Banner = () => {
           <Col xs={12}>
             <div className="banner-stats">
               <div className="banner-stat">
-                <div className="banner-stat-number">11</div>
-                <div className="banner-stat-label">Years of experience</div>
+                <div className="banner-stat-number">3</div>
+                <div className="banner-stat-label">Years of <br />experience</div>
               </div>
               <div className="banner-stat">
-                <div className="banner-stat-number">25</div>
-                <div className="banner-stat-label">Projects completed</div>
+                <div className="banner-stat-number">10+</div>
+                <div className="banner-stat-label">Projects <br />completed</div>
               </div>
               <div className="banner-stat">
-                <div className="banner-stat-number">8</div>
-                <div className="banner-stat-label">Technologies mastered</div>
+                <div className="banner-stat-number">10</div>
+                <div className="banner-stat-label">Technologies <br />mastered</div>
               </div>
               <div className="banner-stat">
                 <div className="banner-stat-number">473</div>
-                <div className="banner-stat-label">Code commits</div>
+                <div className="banner-stat-label">Code <br />commits</div>
               </div>
             </div>
           </Col>
